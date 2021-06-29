@@ -1,0 +1,10 @@
+---
+title: "03-salmon-n-rstudio"
+output: html_document
+---
+
+
+```{bash}
+/home/shared/salmon-1.4.0_linux_x86_64/bin/salmon
+```
+
