@@ -4,12 +4,27 @@ output: html_document
 ---
 
 
+library(credentials)
+set_github_pat()
+
 ```{bash}
 curl --insecure \
 -O https://owl.fish.washington.edu/halfshell/genomic-databank/Pgenerosa_transcriptome_v5.fasta
 ```
 
 ```{bash}
-mv 
+pwd
+mv ../Pgenerosa_transcriptome_v5.fasta ../data/Pgenerosa_transcriptome_v5.fasta
+```
+```{bash}
+cd ../data
+curl --insecure \
+-O https://owl.fish.washington.edu/nightingales/P_generosa/Trueseq-stranded-mRNA-libraries-GeoRNA8-H1-NR021_S5_L002_R1_001.fastq.gz
+
+curl --insecure \
+-O https://owl.fish.washington.edu/nightingales/P_generosa/Trueseq-stranded-mRNA-libraries-GeoRNA8-H1-NR021_S5_L002_R2_001.fastq.gz
+
+cd ../code
+
 ```
 
