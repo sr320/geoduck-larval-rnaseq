@@ -1,0 +1,15 @@
+---
+title: "02-kallisto-Rstudio"
+output: html_document
+---
+
+
+```{bash}
+curl --insecure \
+-O https://owl.fish.washington.edu/halfshell/genomic-databank/Pgenerosa_transcriptome_v5.fasta
+```
+
+```{bash}
+mv 
+```
+

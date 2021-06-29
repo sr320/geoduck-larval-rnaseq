@@ -1,5 +1,6 @@
-
 data/Panopea-generosa-v1.0.fa
 data/Pgenerosa_transcriptome_v5.fasta
 data/Trueseq-stranded-mRNA-libraries-GeoRNA8-H1-NR021_S5_L001_R1_001.fastq
 data/Trueseq-stranded-mRNA-libraries-GeoRNA8-H1-NR021_S5_L001_R2_001.fastq
+.Rproj.user
+data
