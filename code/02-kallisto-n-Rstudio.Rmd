@@ -28,3 +28,13 @@ cd ../code
 
 ```
 
+```{bash}
+/home/shared/kallisto/kallisto \
+index -i ../data/transcriptome_v5.idx ../data/Pgenerosa_transcriptome_v5.fasta
+```
+
+```{bash}
+rsync -avz ../data/transcriptome_v5.idx sr320@gannet.fish.washington.edu:/volume2/web/seashell/wd/062821/
+```
+
+
