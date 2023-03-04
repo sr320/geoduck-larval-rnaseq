@@ -15,3 +15,111 @@ library(tidyverse)
 ```{r schemat, echo = FALSE, out.width = "70%", fig.align = "center"}
 knitr::include_graphics("img/ncbi.png")
 ```
+
+
+https://www.ncbi.nlm.nih.gov/sra?term=c
+
+
+```{bash}
+/home/shared/sratoolkit.2.11.2-ubuntu64/bin/fasterq-dump.2.11.2 \
+--outdir ../data  \
+--split-files \
+--threads 27 \
+--mem 100GB \
+--progress \
+SRR8788211
+```
+
+/home/shared/sratoolkit.2.11.2-ubuntu64/bin/fasterq-dump.2.11.2 \
+--outdir . \
+--split-files \
+--threads 27 \
+--mem 100GB \
+--progress \
+SRR12212519
+
+
+```{bash}
+/home/shared/sratoolkit.2.11.2-ubuntu64/bin/fasterq-dump.2.11.2 \
+--outdir ../data  \
+--split-files \
+--threads 27 \
+--mem 100GB \
+--progress \
+SRR12227929
+```
+
+
+#fastqc 
+
+```{bash}
+/home/shared/FastQC/fastqc \
+../data/SRR8788211_1.fastq \
+../data/SRR8788211_2.fastq \
+../data/SRR12227929_1.fastq \
+../data/SRR12227929_2.fastq \
+-t 48 \
+-o ../output/01.2-data-explore/
+```
+
+
+```
+/home/shared/MultiQC.v1.12.dev0/multiqc ../output/01.2-data-explore/
+```
+
+# Genome 
+
+https://gannet.fish.washington.edu/Atumefaciens/20191105_swoose_pgen_v074_renaming/Panopea-generosa-v1.0.fa
+
+
+```{bash}
+cd ../data/ 
+curl -O https://gannet.fish.washington.edu/Atumefaciens/20191105_swoose_pgen_v074_renaming/Panopea-generosa-v1.0.fa
+```
+
+
+
+```{bash}
+cd ../data/ 
+curl -O https://gannet.fish.washington.edu/Atumefaciens/20191105_swoose_pgen_v074_renaming/Panopea-generosa-v1.0.fa
+```
+
+
+```{bash}
+cd ../data/ 
+curl -O https://gannet.fish.washington.edu/Atumefaciens/20191105_swoose_pgen_v074_renaming/Panopea-generosa-v1.0.a4.gene.gff3
+```
+
+
+# Transcriptome
+
+http://owl.fish.washington.edu/halfshell/genomic-databank/Pgenerosa_transcriptome_v5.fasta
+
+https://gannet.fish.washington.edu/Atumefaciens/20191105_swoose_pgen_v074_renaming/Panopea-generosa-v1.0.a4.gene.gff3
+
+
+```{bash}
+cd ../data/ 
+curl -O http://owl.fish.washington.edu/halfshell/genomic-databank/Pgenerosa_transcriptome_v5.fasta
+```
+
+```{bash}
+head ../data/Pgenerosa_transcriptome_v5.fasta
+```
+
+```{bash}
+grep '>' ../data/Pgenerosa_transcriptome_v5.fasta | wc -l
+```
+
+
+# Get gene from genome 
+
+```{bash}
+/home/shared/bedtools2/bin/fastaFromBed \
+-fi ../data/Panopea-generosa-v1.0.fa \
+-bed ../data/Panopea-generosa-v1.0.a4.gene.gff3 \
+> ../output/01.2-data-explore/test.fa
+
+```
+
+
