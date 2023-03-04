@@ -1,0 +1,17 @@
+---
+title: "01.2-data-explore"
+output: md_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+
+
+![img](img/ncbi.png)
+
+```{r schemat, echo = FALSE, out.width = "70%", fig.align = "center"}
+knitr::include_graphics("img/ncbi.png")
+```
